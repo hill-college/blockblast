@@ -1,4 +1,4 @@
-const cacheName = "reun-Block Blast Puzzle-1.1";
+const cacheName = "reun-Block Blast Puzzle-4.6";
 const contentToCache = [
     "Build/BlockBlast1.1-8.loader.js",
     "Build/BlockBlast1.1-8.framework.js.unityweb",
