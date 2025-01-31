@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Papa's Freezeria | Hill College Games</title>
-    <link rel="icon" type="image/x-icon" href="/hc-favicon.png">
+    <title>Hill College | Papa's Freezeria</title>
+     <link rel="icon" type="image/x-icon" href="/hc-favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/assets/ruffle/ruffle.js"></script>
@@ -15,15 +15,24 @@
         body, html {
             width: 100%;
             height: 100%;
-            background-color: black; /* Optional background */
+            background-color: black; /* Optional */
             display: flex;
             justify-content: center;
             align-items: center;
         }
         #game-container {
-            width: 100%;
-            height: 100%;
-            position: center;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #game-container object, 
+        #game-container embed, 
+        #game-container canvas {
+            width: 100% !important;
+            height: 100% !important;
         }
     </style>
 </head>
@@ -35,17 +44,20 @@
         const ruffle = RufflePlayer.newest();
         const player = ruffle.createPlayer();
 
-        // Append the player to the full-screen container
-        document.getElementById("game-container").appendChild(player);
+        // Append player and force full screen
+        const container = document.getElementById("game-container");
+        container.appendChild(player);
 
         // Load the SWF game
         player.load("/papa-games/papasfreezeria.swf");
 
-        // Resize game dynamically on window resize
-        window.addEventListener("resize", () => {
+        // Force full screen dynamically
+        function resizeGame() {
             player.style.width = window.innerWidth + "px";
             player.style.height = window.innerHeight + "px";
-        });
+        }
+        window.addEventListener("resize", resizeGame);
+        resizeGame();
     </script>
 </body>
 </html>
