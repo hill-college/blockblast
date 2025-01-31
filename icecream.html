@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pappa's Freezaeria</title>
     <script src="/assets/ruffle/ruffle.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Optional background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #game-container {
-            display: inline-block;
-            width: 800px; /* Set width based on your SWF's dimensions */
-            height: 600px; /* Set height based on your SWF's dimensions */
-            background-color: #000; /* Optional: Background color */
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <h1>Papa's Freezeria COMING SOON</h1>
     <div id="game-container"></div>
 
     <script>
         // Initialize Ruffle
         const ruffle = RufflePlayer.newest();
         const player = ruffle.createPlayer();
-        
-        // Append the player to the container
+
+        // Append the player to the full-screen container
         document.getElementById("game-container").appendChild(player);
-        
-        // Load the SWF file
+
+        // Load the SWF game
         player.load("/papa-games/papasfreezeria.swf");
+
+        // Resize game dynamically on window resize
+        window.addEventListener("resize", () => {
+            player.style.width = window.innerWidth + "px";
+            player.style.height = window.innerHeight + "px";
+        });
     </script>
 </body>
 </html>
