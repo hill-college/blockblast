@@ -48,7 +48,7 @@
         .logo {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(135deg, #bb7321, #e8cba9);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -60,7 +60,7 @@
         }
 
         h1 {
-            color: #1e3a8a;
+            color: #1f2437;
             font-size: 3rem;
             margin: 0;
             text-shadow: none;
@@ -68,7 +68,7 @@
         }
 
         .subtitle {
-            color: #374151;
+            color: #1f2437;
             font-size: 1.2rem;
             font-weight: 400;
             margin-top: 10px;
@@ -80,12 +80,6 @@
             gap: 30px;
             margin-bottom: 40px;
         }
-
-         .games-grid {
-             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-         }
 
         .game-card {
             background: rgba(255, 255, 255, 0.95);
@@ -110,7 +104,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(90deg, #bb7321, #bb7321);
         }
 
         .game-title {
@@ -164,7 +158,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(45deg, #bb7321, #e8cba9);
             color: white;
             flex: 1;
         }
@@ -349,34 +343,12 @@
                 <div class="logo">HC</div>
                 <div>
                     <h1>Hill College Game Portal</h1>
-                    <p class="subtitle">Discover and enjoy educational games</p>
+                    <p class="subtitle">Access the all the games you love, unblocked and ad free!</p>
                 </div>
             </div>
         </header>
 
         <div class="games-grid">
-            <div class="game-card">
-                <h3 class="game-title">Math Adventure</h3>
-                <p class="game-description">Embark on an exciting journey through mathematical concepts with interactive puzzles and challenges.</p>
-                <div class="audio-warning">This game contains audio effects and background music</div>
-                <div class="game-actions">
-                    <a href="/games/math-adventure" class="btn btn-primary">Play Game</a>
-                    <button class="btn btn-secondary" onclick="openRatingModal('Math Adventure')">Rate Game</button>
-                </div>
-                <div class="rating-section">
-                    <div class="rating">
-                        <div class="stars">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star empty">★</span>
-                        </div>
-                        <span>(4.2/5)</span>
-                    </div>
-                    <button class="report-btn" onclick="openReportModal('Math Adventure')">Report Issue</button>
-                </div>
-            </div>
 
             <div class="game-card"></div>
                 <h3 class="game-title">Wordle</h3>
