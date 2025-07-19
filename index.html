@@ -13,17 +13,14 @@
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          // Select all report triggers
-          document.querySelectorAll('.openReportModal').forEach(btn => {
-            btn.addEventListener('click', () => {
-              const gameName = btn.getAttribute('gameName');
-              const input = document.getElementById('ReportGame');
-              if (input) input.value = gameName;
-            });
-          });
-        });
-        </script>
+        function openReportModal(gameName) {
+        currentGame = gameName;
+        document.getElementById('reportModal').style.display = 'block';
+
+        // Set the hidden input value
+         document.getElementById('ReportGame').value = gameName;
+             }
+    </script>
         
 
     <style>
@@ -581,7 +578,7 @@
                                     </div>
                                     <span>(4.8/5)</span>
                                 </div>
-                                <button class="report-btn" onclick="openReportModal('Tester')">Report Issue</button>
+                                <button class="report-btn" onclick="openReportModal('test-game')">Report Issue</button>
                             </div>
                         </div>
 
@@ -615,8 +612,8 @@
                     <label for="reportDescription">Description:</label>
                     <textarea name="reportDescription" placeholder="Please describe the issue in detail..." required></textarea>
                 </div>
-                <input type="hidden" name="ReportGame" id="ReportGame" value="" />
-                <div class="game-actions">
+                <input type="hidden" name="ReportGame" id="ReportGame" value="" /> 
+              <div class="game-actions">
                     <button type="submit" class="pageclip-form__submit">
                         <span>Send Report</span>
                         </button>
