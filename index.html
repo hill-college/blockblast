@@ -584,25 +584,28 @@
             <form id="reportForm" action="https://send.pageclip.co/F1WsgIfB7jpklima4YmCFvZ2ETjdaqNS/game-report" class="pageclip-form" method="post">
                 <div class="form-group">
                     <label for="reportEmail">Email Address:</label>
-                    <input type="email" id="reportEmail" placeholder="your.email@hillcollege.org" required>
+                    <input type="email" name="reportEmail" placeholder="your.email@hillcollege.org" required>
                 </div>
                 <div class="form-group">
                     <label for="reportType">Issue Type:</label>
-                    <select id="reportType" required>
+                    <select name="reportType" required>
                         <option value="">Select an issue type</option>
                         <option value="technical">Technical Problem</option>
                         <option value="content">Inappropriate Content</option>
                         <option value="accessibility">Accessibility Issue</option>
+                        <option value="TEST">DEVELOPER TEST</option>
                         <option value="bug">Bug Report</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="reportDescription">Description:</label>
-                    <textarea id="reportDescription" placeholder="Please describe the issue in detail..." required></textarea>
+                    <textarea name="reportDescription" placeholder="Please describe the issue in detail..." required></textarea>
                 </div>
                 <div class="game-actions">
-                    <button type="submit" class="pageclip-form__submit" class="btn btn-primary">Submit Report</button>
+                    <button type="submit" class="pageclip-form__submit">
+                        <span>Send Report</span>
+                        </button>
                     <button type="button" class="btn btn-secondary" onclick="closeModal('reportModal')">Cancel</button>
                 </div>
             </form>
