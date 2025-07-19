@@ -1,7 +1,7 @@
 {
     "name": "Block Blast Puzzle",
     "short_name": "Block Blast Puzzle",
-    "start_url": "index.html",
+    "start_url": "/blockblast/lindex.html",
     "display": "fullscreen",
     "background_color": "#231F20",
     "theme_color": "#000",
