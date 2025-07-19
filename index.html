@@ -12,6 +12,20 @@
 
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Select all report triggers
+          document.querySelectorAll('.open-report').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const gameName = btn.getAttribute('gameName');
+              const input = document.getElementById('ReportGame');
+              if (input) input.value = gameName;
+            });
+          });
+        });
+        </script>
+        
+
     <style>
         * {
             margin: 0;
@@ -602,7 +616,7 @@
                     <label for="reportDescription">Description:</label>
                     <textarea name="reportDescription" placeholder="Please describe the issue in detail..." required></textarea>
                 </div>
-                <input type="hidden" name="ReportGame" value="HERE" />
+                <input type="hidden" name="ReportGame" id="ReportGame" value="" />
                 <div class="game-actions">
                     <button type="submit" class="pageclip-form__submit">
                         <span>Send Report</span>
